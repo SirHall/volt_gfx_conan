@@ -1,7 +1,7 @@
 from conans import ConanFile, CMake, tools
 
 
-class VoltnetConan(ConanFile):
+class VoltgfxConan(ConanFile):
     name = "volt_gfx"
     version = "0.0.1"
     license = "GPL3"
@@ -25,7 +25,7 @@ class VoltnetConan(ConanFile):
     exports_sources = "include/**"
 
     def source(self):
-        git = tools.Git(folder="volt_net")
+        git = tools.Git(folder="volt_gfx")
         git.clone("https://www.github.com/SirHall/volt_gfx.git", "master")
 
         # This small hack might be useful to guarantee proper /MT /MD linkage
