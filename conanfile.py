@@ -1,7 +1,7 @@
 from conans import ConanFile, CMake, tools
 
 
-class VoltnetConan(ConanFile):
+class VoltgfxConan(ConanFile):
     name = "volt_gfx"
     version = "0.0.1"
     license = "GPL3"
@@ -25,13 +25,13 @@ class VoltnetConan(ConanFile):
     exports_sources = "include/**"
 
     def source(self):
-        git = tools.Git(folder="volt_net")
+        git = tools.Git(folder="volt_gfx")
         git.clone("https://www.github.com/SirHall/volt_gfx.git", "master")
 
         # This small hack might be useful to guarantee proper /MT /MD linkage
         # in MSVC if the packaged project doesn't have variables to set it
         # properly
-        tools.replace_in_file("volt_net/CMakeLists.txt", "project(volt_ge_gfx)",
+        tools.replace_in_file("volt_gfx/CMakeLists.txt", "project(volt_ge_gfx)",
                               '''project(volt_ge_gfx)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()''')
