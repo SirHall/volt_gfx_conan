@@ -9,10 +9,10 @@ class VoltgfxConan(ConanFile):
     url = "https://www.github.com/SirHall/volt_gfx_conan"
     requires = \
     [
-        "glfw/0.0.1@volt/dev",
+        "glfw/3.3.2@bincrafters/stable",
         "glm/0.9.9.5@g-truc/stable",
         "volt_event/0.0.1@volt/dev",
-        "volt_gl/0.0.1@volt/dev",
+        "glew/2.1.0@bincrafters/stable",
         "boost/1.71.0@conan/stable",
         "zlib/1.2.11@conan/stable"
     ]
